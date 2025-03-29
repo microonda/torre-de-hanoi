@@ -1,0 +1,54 @@
+body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: Arial, sans-serif; background: #f0f0f0;
+  }
+  
+  .menu-overlay {
+    position: fixed; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); display: flex;
+    align-items: center; justify-content: center;
+  }
+  
+  .menu {
+    background: #fff; padding: 20px 40px; border-radius: 10px;
+    text-align: center;
+  }
+  
+  .menu button, #resetBtn {
+    padding: 10px 20px; border: none;
+    background: #3498db; color: #fff; cursor: pointer;
+    border-radius: 5px; font-size: 16px;
+  }
+  
+  .counter {
+    position: absolute; top: 10px; left: 50%;
+    transform: translateX(-50%);
+    background: #fff; padding: 10px 20px; border-radius: 20px;
+  }
+  
+  .game-board {
+    display: flex; justify-content: space-around;
+    align-items: flex-end; height: 80%; margin-top: 60px;
+  }
+  
+  .column {
+    width: 30%; height: 100%;
+    display: flex; flex-direction: column-reverse;
+    align-items: center; border: 2px dashed #ccc;
+    background: #ecf0f1; border-radius: 10px;
+  }
+  
+  .disc {
+    height: 30px; margin: 5px 0; background: #e74c3c;
+    text-align: center; color: #fff; cursor: grab;
+  }
+  
+  #resetBtn {
+    position: fixed; bottom: 20px; right: 20px;
+    width: 60px; height: 60px; border-radius: 50%;
+    display: none; align-items: center; justify-content: center;
+  }
+  
+  #resetBtn img {
+    width: 40px; height: 40px;
+  }
