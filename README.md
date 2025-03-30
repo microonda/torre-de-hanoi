@@ -1,5 +1,5 @@
 # torre-de-hanoi
-Jogo simples em HTML5, CSS3 e JavaScript simulando um desafio antigo: A torre de Hanói.
+Jogo simples em HTML5, CSS3 e JavaScript simulando um desafio <strong>**matemático**<strong> antigo: A torre de Hanói.
 
 <a style="font-size: 24px" href="https://microonda.github.io/torre-de-hanoi/">Link para jogar aqui<a/>
   
