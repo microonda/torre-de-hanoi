@@ -4,9 +4,14 @@ const moveCounterEl = document.getElementById('moveCounter');
 const gameBoard = document.getElementById('gameBoard');
 const menuOverlay = document.getElementById('menuOverlay');
 const startBtn = document.getElementById('startBtn');
+const avancBtn = document.getElementById('avancBtn');
 const resetBtn = document.getElementById('resetBtn');
 
-function initGame() {
+function startGame() {
+  // resetando css dos botões e pop up
+      resetBtn.style.display = 'hidden';
+      avancBtn.style.display = "hidden";
+
   moveCount = 0;
   moveCounterEl.textContent = 'Movimentos: 0';
   document.querySelectorAll('.column').forEach(col => col.innerHTML = '');
@@ -49,15 +54,34 @@ document.querySelectorAll('.column').forEach(column => {
     if (topDisc && parseInt(draggedDisc.dataset.size) > parseInt(topDisc.dataset.size)) return;
     this.appendChild(draggedDisc);
     moveCounterEl.textContent = 'Movimentos: ' + (++moveCount);
-    if (document.getElementById('col3').children.length === numDiscs)
-      setTimeout(() => resetBtn.style.display = 'flex', 100);
+    win = document.getElementById('col3').children.length === numDiscs
+    if (win) {
+      resetBtn.style.display = 'flex';
+      avancBtn.style.display = "flex";
+    }
   });
 });
 
 startBtn.addEventListener('click', () => {
   menuOverlay.style.display = 'none';
   gameBoard.style.display = 'flex';
-  initGame();
+  startGame();
 });
 
-resetBtn.addEventListener('click', initGame);
+avancBtn.addEventListener('click', vitoria);
+
+resetBtn.addEventListener('click', startGame);
+
+
+function vitoria() {
+  const popup = document.getElementById('victoryPopup');
+  popup.classList.remove('hidden');
+  setTimeout(() => popup.classList.add('show'), 10);
+
+}
+
+function sumirVitoria() {
+  const popup = document.getElementById('victoryPopup');
+  avancBtn.style.display = 'none'
+  popup.classList.add('hidden')
+}
