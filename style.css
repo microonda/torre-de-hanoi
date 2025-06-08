@@ -98,7 +98,17 @@ body, html {
   #avancBtn img {
     width: 32px; height: 30px;
   }
-  
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 gold; }
+    70% { box-shadow: 0 0 10px 10px rgba(255, 215, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+  }
+
+  #avancBtn.perfect {
+    animation: pulse 2s infinite;
+  }
+
   #resetBtn {
     position: fixed; bottom: 20px; right: 20px;
     width: 60px; height: 60px; border-radius: 50%;

@@ -9,6 +9,10 @@ const startBtn = document.getElementById('startBtn');
 const avancBtn = document.getElementById('avancBtn');
 const resetBtn = document.getElementById('resetBtn');
 const minimo = document.getElementById('minimo');
+const perfectEl = document.getElementById('perfectClear');
+
+const popup = document.getElementById('victoryPopup');
+const fase = document.getElementById('fase');
 
 function startGame() {
   // resetando css dos botões e pop up
@@ -86,17 +90,23 @@ startBtn.addEventListener('click', () => {
 avancBtn.addEventListener('click', vitoria);
 resetBtn.addEventListener('click', startGame);
 
-const popup = document.getElementById('victoryPopup');
-const fase = document.getElementById('fase');
-
 function vitoria() {
   popup.classList.remove('hidden');
+  let minimoQuant = Math.pow(2, numDiscs) - 1;
+
+  if (moveCount === minimoQuant) {
+    const perfectEl = document.getElementById('perfectClear');
+    perfectEl.classList.add('show');
+    perfectEl.classList.remove('hidden');
+
+  }
   setTimeout(() => popup.classList.add('show'), 10);
 }
 
 function sumirVitoria() {
   avancBtn.style.display = 'none'
   popup.classList.add('hidden')
+  perfectEl.classList.add('hidden')
 }
 
 function proximaFase() {
@@ -109,3 +119,4 @@ function gerarCorPorNivel(nivel) {
     const hue = (nivel * 137.508) % 360; // bom espaçamento de cores
     return `hsl(${hue}, 70%, 50%)`;
   }
+

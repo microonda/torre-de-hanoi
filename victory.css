@@ -99,3 +99,22 @@
 .hidden {
     display: none;
 }
+
+#perfectClear {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: gold;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s, transform 2s;
+  z-index: 1000;
+}
+
+#perfectClear.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-40px) scale(1.2);
+}
