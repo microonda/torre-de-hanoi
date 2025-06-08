@@ -1,6 +1,6 @@
 body, html {
     margin: 0; padding: 0; height: 100%;
-    font-family: Arial, sans-serif; background: #a3b2ff;
+    font-family: Arial, sans-serif; background: #004643;
   }
   
   .menu-overlay {
@@ -19,11 +19,38 @@ body, html {
     background: #3498db; color: #fff; cursor: pointer;
     border-radius: 5px; font-size: 16px;
   }
+
+  .menu button#startBtn { /* More specific selector */
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #3498db, #2980b9); /* Example gradient */
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .menu button#startBtn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #2980b9, #3498db); /* Slightly darker/shifted gradient */
+  }
   
   .counter {
     position: absolute; top: 10px; left: 50%;
     transform: translateX(-50%);
     background: #fff; padding: 10px 20px; border-radius: 20px;
+  }
+
+  #minimo {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 100px;
+    font-size: 14px;
+      position: absolute;
+      bottom: -15px;
+      left: calc(50% - 40px);      
   }
   
   .game-board {
@@ -42,10 +69,23 @@ body, html {
     height: 30px; margin: 5px 0; background: #e74c3c;
     text-align: center; color: #fff; cursor: grab;
     border-radius: 10px;
+    /* ... other styles ... */
+    /* Obviamente é i.a. */
+    height: 28px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.1);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-weight: bold;
+    color: white; 
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
   }
 
   #avancBtn:hover, #resetBtn:hover {
-    cursor: pointer; background-color: rgb(81, 146, 19); transition: 0.5s;
+    cursor: pointer;
+    background-color: rgb(81, 146, 19);
+    transition: 0.5s;
   }
 
   #avancBtn {
@@ -68,3 +108,68 @@ body, html {
   #resetBtn img {
     width: 40px; height: 40px;
   }
+
+
+  @media (max-width:700px)
+  {  
+        /* Exemplo: Reduzindo padding e fontes para telas pequenas */
+    .menu {
+      padding: 15px 20px;
+    }
+
+    .menu button, #resetBtn {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+
+    .menu button#startBtn {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+
+    .counter {
+      position: absolute;
+      top: 0;
+      font-size: 14px;
+    }
+
+    #minimo{
+      bottom: 20px;
+      left: 43%;
+    }
+
+    .game-board {
+      flex-direction: column; /* empilhar colunas em vez de lado a lado */
+      align-items: center;
+      height: auto;
+      margin-top: 20px;
+      gap: 5px;
+    }
+
+    .column {
+      width: 90%;
+      height: 200px; /* altura fixa menor para caber em telas pequenas */
+    }
+
+    .disc {
+      height:  32px;
+      font-size: 12px;
+    }
+
+    #avancBtn, #resetBtn {
+      width: 50px;
+      height: 50px;
+      bottom: 15px;
+    }
+
+    #avancBtn img, #resetBtn img {
+      width: 24px;
+      height: 24px;
+    }
+
+  }
+@media (max-width: 350px) {
+  #minimo{
+    left: 30%;
+  }
+}

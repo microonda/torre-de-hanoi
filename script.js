@@ -8,12 +8,12 @@ const menuOverlay = document.getElementById('menuOverlay');
 const startBtn = document.getElementById('startBtn');
 const avancBtn = document.getElementById('avancBtn');
 const resetBtn = document.getElementById('resetBtn');
+const minimo = document.getElementById('minimo');
 
 function startGame() {
   // resetando css dos botões e pop up
   resetBtn.style.display = 'hidden';
-  avancBtn.style.display = "hidden";
-
+  avancBtn.style.display = "hidden";  
   moveCounterEl.textContent = 'Movimentos: 0';
   document.querySelectorAll('.column').forEach(col => col.innerHTML = '');
   resetBtn.style.display = 'none';
@@ -34,6 +34,11 @@ function startGame() {
     addDragEvents(disc);
     document.getElementById('col1').appendChild(disc);
   }
+
+  // Calcula e exibe o mínimo de movimentos padrão de cada fase
+  let minimo_quant = Math.pow(2, numDiscs) - 1;
+  minimo.textContent = 'Mínimo: ' + minimo_quant;
+
   // reset nas variáveis de ambiente
   fase.textContent = 'Você concluiu com sucesso a fase ' + fases + '!';
   moveCount = 0;

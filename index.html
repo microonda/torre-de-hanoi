@@ -6,6 +6,7 @@
   <title>Torre de Hanói</title>
   <link rel="stylesheet" href="./victory.css">
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="bricks.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -17,6 +18,7 @@
   </div>
 
   <div class="counter" id="moveCounter">Movimentos: 0</div>
+  <div id="minimo">Mínimo: 0</div>
 
   <div class="game-board" id="gameBoard" style="display:none;">
     <div class="column" data-column="1" id="col1"></div>
@@ -24,6 +26,8 @@
     <div class="column" data-column="3" id="col3"></div>
   </div>
 
+  <!--Vitória-->
+  <!--Div implícita-->
   <div id="victoryPopup" class="popup-container hidden">
     <div class="confetti-wrapper"></div>
     <div class="popup animated-popup">
